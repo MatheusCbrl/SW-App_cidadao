@@ -40,52 +40,58 @@
     integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
     crossorigin="anonymous"></script>
   <script src="./js/app.js"></script>
-  <title>App Cidadão</title>
-  <script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
+  <title>App EconoMesa</title>
 </head>
 
 <body>
   <div class="container-table container">
-    <h1>QR Code Reader</h1>
-    <button class="btn btn-outline-primary" onclick="openQRScanner()">Open QR Scanner</button>
-     <br/>
-     <h1>Obs:</h1>
-     <br/>
-     <br/>
-    <script>
-      function openQRScanner() {
-        // Create a new Instascan scanner instance
-        const scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
-  
-        // Listen for scan events
-        scanner.addListener('scan', function(content) {
-          // Display the scanned content
-          alert('Scanned QR code: ' + content);
-  
-          // Stop scanning
-          scanner.stop();
-        });
-  
-        // Start scanning
-        Instascan.Camera.getCameras()
-          .then(function(cameras) {
-            if (cameras.length > 0) {
-              scanner.start(cameras[0]); // Use the first camera
-            } else {
-              console.error('No cameras found.');
-            }
-          })
-          .catch(function(error) {
-            console.error('Error accessing camera:', error);
-          });
-      }
-    </script>
+    <h1>EconoMesa</h1>
     <div>
       <button id="Informacoes" type="button" class="btn btn-warning btn-md mb-3" data-toggle="modal"
         data-target="#exampleModal">
         Informações
       </button>
     </div>
+     <br/>
+
+     <main role="main" class="flex-shrink-0">
+      <h1 class="mt-5"></h1>
+       <div class="container">
+        <p>Escreva o nome do Item: </p>
+        <input class="form-control" id="DiurnoInput" type="text" placeholder="Digite aqui..">
+        <br>
+        <ul class="list-group" id="diurnoList">
+         <li class="list-group-item">Item: <strong>Leite</strong> - Valor: <strong>4,99</strong></li>
+         <li class="list-group-item">Item: <strong>Macarrão</strong> - Valor: <strong>4,99</strong></li>
+         <li class="list-group-item">Item: <strong>Pães</strong> - Valor: <strong>4,99</strong></li>
+         <li class="list-group-item">Item: <strong>Leite</strong> - Valor: <strong>4,99</strong></li>
+         <li class="list-group-item">Item: <strong>Macarrão</strong> - Valor: <strong>4,99</strong></li>
+         <li class="list-group-item">Item: <strong>Pães</strong> - Valor: <strong>4,99</strong></li>
+         <li class="list-group-item">Item: <strong>Leite</strong> - Valor: <strong>4,99</strong></li>
+         <li class="list-group-item">Item: <strong>Macarrão</strong> - Valor: <strong>4,99</strong></li>
+         <li class="list-group-item">Item: <strong>Pães</strong> - Valor: <strong>4,99</strong></li>
+         <li class="list-group-item">Item: <strong>Leite</strong> - Valor: <strong>4,99</strong></li>
+         <li class="list-group-item">Item: <strong>Macarrão</strong> - Valor: <strong>4,99</strong></li>
+         <li class="list-group-item">Item: <strong>Pães</strong> - Valor: <strong>4,99</strong></li>
+         <li class="list-group-item">Item: <strong>Leite</strong> - Valor: <strong>4,99</strong></li>
+         <li class="list-group-item">Item: <strong>Macarrão</strong> - Valor: <strong>4,99</strong></li>
+         <li class="list-group-item">Item: <strong>Pães</strong> - Valor: <strong>4,99</strong></li>
+         <li class="list-group-item">Item: <strong>Leite</strong> - Valor: <strong>4,99</strong></li>
+         <li class="list-group-item">Item: <strong>Macarrão</strong> - Valor: <strong>4,99</strong></li>
+         <li class="list-group-item">Item: <strong>Pães</strong> - Valor: <strong>4,99</strong></li>
+        </ul>
+      </div>
+     </main>
+    <script>
+      $(document).ready(function () {
+       $("#DiurnoInput").on("keyup", function () {
+        var value = $(this).val().toLowerCase();
+        $("#diurnoList li").filter(function () {
+         $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+       });
+      });
+     </script>
   </div>
   </div>
 
