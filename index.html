@@ -52,6 +52,8 @@
         Informações
       </button>
     </div>
+    <h3>Carrinho de Compras</h2>
+      <ul id="cartItems"></ul>
      <br/>
 
      <main role="main" class="flex-shrink-0">
@@ -61,7 +63,14 @@
         <input class="form-control" id="DiurnoInput" type="text" placeholder="Digite aqui..">
         <br>
         <ul class="list-group" id="diurnoList">
-         <li class="list-group-item">Item: <strong>Leite</strong> - Valor: <strong>4,99</strong> - Mercado: <strong><a class="nav-link" href="./mercado.html">Andreazza</a></strong></li>
+         <li class="list-group-item">
+         Item: <strong>Leite</strong>
+          - Valor: <strong>4,99</strong>
+          - Mercado: <strong><a class="nav-link" href="./mercado.html">Andreazza</a></strong>
+          <button class="btn btn-primary"  onclick="addToCart('Leite 4,99')">
+            Adicionar
+          </button>
+        </li>
          <li class="list-group-item">Item: <strong>Leite</strong> - Valor: <strong>4,99</strong> - Mercado: <strong>Andreazza</strong></li>
          <li class="list-group-item">Item: <strong>Leite</strong> - Valor: <strong>4,99</strong> - Mercado: <strong>Andreazza</strong></li>
          <li class="list-group-item">Item: <strong>Leite</strong> - Valor: <strong>4,99</strong> - Mercado: <strong>Andreazza</strong></li>
@@ -92,6 +101,12 @@
         });
        });
       });
+        function addToCart(item) {
+            var cartItems = document.getElementById("cartItems");
+            var itemElement = document.createElement("li");
+            itemElement.innerHTML = item;
+            cartItems.appendChild(itemElement);
+        }
      </script>
   </div>
   </div>
