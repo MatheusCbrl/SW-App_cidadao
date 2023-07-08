@@ -53,46 +53,6 @@
       </button>
     </div>
      <br/>
-
-     <main role="main" class="flex-shrink-0">
-      <h1 class="mt-5"></h1>
-       <div class="container">
-        <p>Escreva o nome do Item: </p>
-        <input class="form-control" id="DiurnoInput" type="text" placeholder="Digite aqui..">
-        <br>
-        <ul class="list-group" id="diurnoList">
-         <li class="list-group-item">Item: <strong>Leite</strong> - Valor: <strong>4,99</strong> - Mercado: <strong><a class="nav-link" href="./mercado.html">Andreazza</a></strong></li>
-         <li class="list-group-item">Item: <strong>Leite</strong> - Valor: <strong>4,99</strong> - Mercado: <strong>Andreazza</strong></li>
-         <li class="list-group-item">Item: <strong>Leite</strong> - Valor: <strong>4,99</strong> - Mercado: <strong>Andreazza</strong></li>
-         <li class="list-group-item">Item: <strong>Leite</strong> - Valor: <strong>4,99</strong> - Mercado: <strong>Andreazza</strong></li>
-         <li class="list-group-item">Item: <strong>Leite</strong> - Valor: <strong>4,99</strong> - Mercado: <strong>Andreazza</strong></li>
-         <li class="list-group-item">Item: <strong>Leite</strong> - Valor: <strong>4,99</strong> - Mercado: <strong>Zafarri</strong></li>
-         <li class="list-group-item">Item: <strong>Leite</strong> - Valor: <strong>4,99</strong> - Mercado: <strong>Zafarri</strong></li>
-         <li class="list-group-item">Item: <strong>Leite</strong> - Valor: <strong>4,99</strong> - Mercado: <strong>Andreazza</strong></li>
-         <li class="list-group-item">Item: <strong>Leite</strong> - Valor: <strong>4,99</strong> - Mercado: <strong>Andreazza</strong></li>
-         <li class="list-group-item">Item: <strong>Leite</strong> - Valor: <strong>4,99</strong> - Mercado: <strong>Andreazza</strong></li>
-         <li class="list-group-item">Item: <strong>Leite</strong> - Valor: <strong>4,99</strong> - Mercado: <strong>Andreazza</strong></li>
-         <li class="list-group-item">Item: <strong>Leite</strong> - Valor: <strong>4,99</strong> - Mercado: <strong>Andreazza</strong></li>
-         <li class="list-group-item">Item: <strong>Macarrão</strong> - Valor: <strong>4,99</strong> - Mercado: <strong>Zafarri</strong></li>
-         <li class="list-group-item">Item: <strong>Macarrão</strong> - Valor: <strong>4,99</strong> - Mercado: <strong>Zafarri</strong></li>
-         <li class="list-group-item">Item: <strong>Macarrão</strong> - Valor: <strong>4,99</strong> - Mercado: <strong>Zafarri</strong></li>
-         <li class="list-group-item">Item: <strong>Macarrão</strong> - Valor: <strong>4,99</strong> - Mercado: <strong>Andreazza</strong></li>
-         <li class="list-group-item">Item: <strong>Goiabada</strong> - Valor: <strong>4,99</strong> - Mercado: <strong>Andreazza</strong></li>
-         <li class="list-group-item">Item: <strong>Goiabada</strong> - Valor: <strong>4,99</strong> - Mercado: <strong>Andreazza</strong></li>
-         <li class="list-group-item">Item: <strong>Goiabada</strong> - Valor: <strong>4,99</strong> - Mercado: <strong>Andreazza</strong></li>
-        </ul>
-      </div>
-     </main>
-    <script>
-      $(document).ready(function () {
-       $("#DiurnoInput").on("keyup", function () {
-        var value = $(this).val().toLowerCase();
-        $("#diurnoList li").filter(function () {
-         $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-        });
-       });
-      });
-     </script>
   </div>
   </div>
 
