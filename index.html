@@ -1,140 +1,184 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="manifest" href="manifest.json" />
+    <!-- ios support -->
+    <link rel="apple-touch-icon" href="images/icons/icon-72x72.png" />
+    <link rel="apple-touch-icon" href="images/icons/icon-96x96.png" />
+    <link rel="apple-touch-icon" href="images/icons/icon-128x128.png" />
+    <link rel="apple-touch-icon" href="images/icons/icon-144x144.png" />
+    <link rel="apple-touch-icon" href="images/icons/icon-152x152.png" />
+    <link rel="apple-touch-icon" href="images/icons/icon-192x192.png" />
+    <link rel="apple-touch-icon" href="images/icons/icon-388x388.png" />
+    <link rel="apple-touch-icon" href="images/icons/icon-512x512.png" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./css/style.css" />
-  <link rel="manifest" href="manifest.json" />
-  <!-- ios support -->
-  <link rel="apple-touch-icon" href="images/icons/icon-72x72.png" />
-  <link rel="apple-touch-icon" href="images/icons/icon-96x96.png" />
-  <link rel="apple-touch-icon" href="images/icons/icon-128x128.png" />
-  <link rel="apple-touch-icon" href="images/icons/icon-144x144.png" />
-  <link rel="apple-touch-icon" href="images/icons/icon-152x152.png" />
-  <link rel="apple-touch-icon" href="images/icons/icon-192x192.png" />
-  <link rel="apple-touch-icon" href="images/icons/icon-388x388.png" />
-  <link rel="apple-touch-icon" href="images/icons/icon-512x512.png" />
+    <link
+      rel="apple-touch-startup-image"
+      href="images/icons/icon-512x512.png"
+      media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+    />
+    <link
+      rel="apple-touch-startup-image"
+      href="images/icons/icon-930x450.png"
+      media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+    />
+    <link
+      rel="apple-touch-startup-image"
+      href="images/icons/icon-1024x1024.png"
+      media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+    />
+    <link
+      rel="apple-touch-startup-image"
+      href="images/icons/icon-2048x2048.png"
+      media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+    />
 
-  <link rel="apple-touch-startup-image" href="images/icons/icon-512x512.png"
-    media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" />
-  <link rel="apple-touch-startup-image" href="images/icons/icon-930x450.png"
-    media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" />
-  <link rel="apple-touch-startup-image" href="images/icons/icon-1024x1024.png"
-    media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" />
-  <link rel="apple-touch-startup-image" href="images/icons/icon-2048x2048.png"
-    media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" />
+    <meta name="apple-mobile-web-app-status-bar" content="#343a40" />
+    <!-- fim ios support -->
+    <meta name="theme-color" content="#343a40" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/app.js"></script>
+    <title>App Cidadão</title>
+  </head>
 
-  <meta name="apple-mobile-web-app-status-bar" content="#343a40" />
-  <!-- fim ios support -->
-  <meta name="theme-color" content="#343a40" />
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-    crossorigin="anonymous"></script>
-  <script src="./js/app.js"></script>
-  <title>App Cidadão</title>
-</head>
-
-<body>
-<div class="container-table container">
-    <h1>QR Code Scanner</h1>
+  <body>
+    <div class="container-table container">
+      <h1>App Cidadão</h1>
+      <p>
+        QR Code Scanner.
+      </p>
+       <input type="file" id="fileInput">
+    <br>
+    <div id="viewer"></div>
+    <br>
     <button 
-    class="btn btn-primary btn-md mb-3"
-    onclick="openQRScanner()">Open QR Scanner
-   </button>
-   <video id="preview"></video>
-    <div>
-      <button id="Informacoes" type="button" class="btn btn-warning btn-md mb-3" data-toggle="modal"
-        data-target="#exampleModal">
-        Informações
-      </button>
-    </div>
+      class="btn btn-outline-primary btn-md mb-3"
+      onclick="previewFile()">
+      OR Scanner  
+     </button>
+      <button 
+      class="btn btn-primary btn-md mb-3"
+      onclick="previewocr()">
+          Verificar
+     </button>
+      <br>
+      <pre id="ocrResult"></pre>
+      
+      
+     
+    
+
     <script>
-  function openQRScanner() {
-      // Get the video element
-      const video = document.getElementById('preview');
-  
-      // Check if the browser supports getUserMedia
-      if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-        // Access the camera and stream video to the video element
-        navigator.mediaDevices.getUserMedia({ video: true })
-          .then(function(stream) {
-            video.srcObject = stream;
-  
-            // Create a new Instascan scanner instance
-            const scanner = new Instascan.Scanner({ video: video });
-  
-            // Listen for scan events
-            scanner.addListener('scan', function(content) {
-              // Display the scanned content
-              alert('Scanned QR code: ' + content);
-  
-              // Stop scanning
-              scanner.stop();
-            });
-  
-            // Start scanning
-            Instascan.Camera.getCameras()
-              .then(function(cameras) {
-                if (cameras.length > 0) {
-                  scanner.start(cameras[0]); // Use the first camera
+       function previewocr(){
+         const ocrResultDisplay = document.getElementById('ocrResult');
+
+         ocrResultDisplay.textContent = 'Não foi possível realizar o OCR.';
+       }
+        function previewFile() {
+            const fileInput = document.getElementById('fileInput');
+            const viewer = document.getElementById('viewer');
+            viewer.innerHTML = ''; // Limpar conteúdo anterior (se houver).
+
+            const file = fileInput.files[0];
+            if (file) {
+                const fileType = file.type;
+                if (fileType.startsWith('image/')) {
+                    // Visualizar imagem
+                    const imageElement = document.createElement('img');
+                    imageElement.style.maxWidth = '400px';
+                    imageElement.style.maxHeight = '400px';
+                    imageElement.src = URL.createObjectURL(file);
+                    viewer.appendChild(imageElement);
                 } else {
-                  console.error('No cameras found.');
+                    // Visualizar documento
+                    const embedElement = document.createElement('embed');
+                    embedElement.style.width = '100%';
+                    embedElement.style.height = '500px';
+                    embedElement.src = URL.createObjectURL(file);
+                    viewer.appendChild(embedElement);
                 }
-              })
-              .catch(function(error) {
-                console.error('Error accessing camera:', error);
-              });
-          })
-          .catch(function(error) {
-            console.error('Error accessing media devices:', error);
-          });
-      } else {
-        console.error('getUserMedia not supported.');
-      }
-
-    }
+            } else {
+                viewer.innerHTML = 'Nenhum arquivo selecionado.';
+            }
+        }
     </script>
-
-</div>
-
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">OCR</h5>
-
+       <div>
+            <button
+              id="Informacoes"
+              type="button"
+              class="btn btn-warning btn-md mb-3"
+              data-toggle="modal"
+              data-target="#exampleModal"
+            >
+              Informações
+            </button>
+          </div>
         </div>
-        <div class="modal-body">
-          Matheus Cabral
-          </br>
+          </div>
+         
+        <!-- Modal -->
+        <div
+          class="modal fade"
+          id="exampleModal"
+          tabindex="-1"
+          role="dialog"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">OCR</h5>
 
+              </div>
+              <div class="modal-body">
+                 Matheus Cabral
+                 </br>
+                 
+              </div>
+              <div class="modal-footer">
+                <button 
+                  onclick="myFunction()" 
+                  class="btn btn-outline-warning">
+                    Dark Mode
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-danger"
+                  data-dismiss="modal"
+                >
+                  Fechar
+                </button>
+              
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="modal-footer">
-          <button onclick="myFunction()" class="btn btn-outline-warning">
-            Dark Mode
-          </button>
-          <button type="button" class="btn btn-danger" data-dismiss="modal">
-            Fechar
-          </button>
-
-        </div>
+        <!-- Modal -->
       </div>
     </div>
-  </div>
-  <!-- Modal -->
-  </div>
-  </div>
-</body>
-
+  </body>
 </html>
