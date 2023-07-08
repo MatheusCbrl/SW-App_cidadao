@@ -5,12 +5,8 @@ var map, infoWindow;
 var showInfoWindow = false;
 var faisalabad = {lat: -29.1684796, lng: -51.1793861};
 var locations = [
-  ['Linha: L001',-29.169134503314755,-51.18309985664441,'Transporte X', 'Aguardar o transporte a partir de: 6:45:00'],
-  ['Linha: L001',-29.17063341335785,-51.1809540894325,'Transporte X', 'Aguardar o transporte a partir de: 6:45:00'],
-  ['Linha: L001',-29.165312183636253,-51.17683421638562,'Transporte Y', 'Aguardar o transporte a partir de: 6:45:00'],
-  ['Linha: L001',-29.16426289451481,-51.18756305244519,'Transporte Y', 'Aguardar o transporte a partir de: 6:45:00'],
-  ['Linha: L001',-29.166661253891487,-51.18962298896863,'Transporte Z', 'Aguardar o transporte a partir de: 6:45:00'],
-  ['Linha: L001',-29.16793535952094,-51.19468699958875,'Transporte Z', 'Aguardar o transporte a partir de: 6:45:00'],
+  ['Mercado: Andreazza',-29.169134503314755,-51.18309985664441,'Amigo da família', 'Aberto das: 9:00 - 21:00'],
+  ['Mercado: Zaffari',-29.17063341335785,-51.1809540894325,'Mercado X', 'Aberto das: 9:00 - 21:00'],
 ];
 
 function initMap() {
