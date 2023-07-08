@@ -57,35 +57,53 @@
         Informações
       </button>
     </div>
+    <script>
+  function openQRScanner() {
+      // Get the video element
+      const video = document.getElementById('preview');
+  
+      // Check if the browser supports getUserMedia
+      if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+        // Access the camera and stream video to the video element
+        navigator.mediaDevices.getUserMedia({ video: true })
+          .then(function(stream) {
+            video.srcObject = stream;
+  
+            // Create a new Instascan scanner instance
+            const scanner = new Instascan.Scanner({ video: video });
+  
+            // Listen for scan events
+            scanner.addListener('scan', function(content) {
+              // Display the scanned content
+              alert('Scanned QR code: ' + content);
+  
+              // Stop scanning
+              scanner.stop();
+            });
+  
+            // Start scanning
+            Instascan.Camera.getCameras()
+              .then(function(cameras) {
+                if (cameras.length > 0) {
+                  scanner.start(cameras[0]); // Use the first camera
+                } else {
+                  console.error('No cameras found.');
+                }
+              })
+              .catch(function(error) {
+                console.error('Error accessing camera:', error);
+              });
+          })
+          .catch(function(error) {
+            console.error('Error accessing media devices:', error);
+          });
+      } else {
+        console.error('getUserMedia not supported.');
+      }
 
-  <script>
-    function openQRScanner() {
-      // Create a new Instascan scanner instance
-      const scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
-
-      // Listen for scan events
-      scanner.addListener('scan', function(content) {
-        // Display the scanned content
-        alert('Scanned QR code: ' + content);
-
-        // Stop scanning
-        scanner.stop();
-      });
-
-      // Start scanning
-      Instascan.Camera.getCameras()
-        .then(function(cameras) {
-          if (cameras.length > 0) {
-            scanner.start(cameras[0]); // Use the first camera
-          } else {
-            console.error('No cameras found.');
-          }
-        })
-        .catch(function(error) {
-          console.error('Error accessing camera:', error);
-        });
     }
-  </script>
+    </script>
+
 </div>
 
   <!-- Modal -->
