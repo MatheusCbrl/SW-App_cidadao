@@ -3,7 +3,6 @@
 <head>
   <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
   <meta charset="utf-8">
-  <link href="../css/style.css" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <meta charset="UTF-8" />
@@ -44,84 +43,107 @@
       integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
       crossorigin="anonymous"></script>
     <script src="./js/app.js"></script>
+    <link href="./css/style.css" rel="stylesheet">
     <title>App EconoMesa</title>
 </head>
 <body>
-</nav>
-  <div id="map"></div>
-  <div class="pac-card" id="pac-card">
-    <div id="pac-container">
-      <input id="pac-input" type="text" placeholder="Digite sua busca">
-    </div>
-  </div>
-  
-  <div id="infowindow-content">
-    <img src="" width="16" height="16" id="place-icon">
-    <span id="place-name" class="title"></span><br>
-    <span id="place-address"></span>
-  </div>
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="contato_modal"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="contato_modal">Dados</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        
-        <div class="modal-body">
-          <img src="https://maps.gstatic.com/tactile/pane/default_geocode-1x.png" class="card-img-top">
-          </br>
-              <p>
-                <a>Dados Aparecerão aqui</a> 
-              </p>
-            </br>
-          </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
-        </div>
-      </div>
-    </div>
-  </div>
-    <!-- Modal -->
-  <script
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqKPYXiV7BlP65rt4SbKmRHrCYAkqh7j0&libraries=places&callback=initMap"
-  async defer>
-  </script>
+ <div id="map"></div>
+ <div class="pac-card" id="pac-card">
+   <div>
+     <div id="title">
+       Pesquisar
+     </div>
+     <div id="type-selector" class="pac-controls">
+       <input type="radio" name="type" id="changetype-all" checked="checked">
+       <label for="changetype-all">Tudo</label>
+
+       <input type="radio" name="type" id="changetype-establishment">
+       <label for="changetype-establishment">Estabelecimentos</label>
+
+       <input type="radio" name="type" id="changetype-address">
+       <label for="changetype-address">Endereços</label>
+     </div>
+     <!-- <div id="strict-bounds-selector" class="pac-controls">
+         <input type="radio" name="type" id="changetype-geocode">
+          <label for="changetype-geocode">Coordenadas</label>
+         <input type="checkbox" id="use-strict-bounds" value="">
+         <label for="use-strict-bounds">Strict Bounds</label>
+       </div> -->
+   </div>
+   <div id="pac-container">
+     <input id="pac-input" type="text" placeholder="Digite sua busca">
+   </div>
+ </div>
+ 
+ <div id="infowindow-content">
+   <img src="" width="16" height="16" id="place-icon">
+   <span id="place-name" class="title"></span><br>
+   <span id="place-address"></span>
+ </div>
+   <!-- Modal -->
+   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="contato_modal"
+   aria-hidden="true">
+   <div class="modal-dialog" role="document">
+     <div class="modal-content">
+       <div class="modal-header">
+         <h5 class="modal-title" id="contato_modal">Dados</h5>
+         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+           <span aria-hidden="true">&times;</span>
+         </button>
+       </div>
+       
+       <div class="modal-body">
+         <img src="https://maps.gstatic.com/tactile/pane/default_geocode-1x.png" class="card-img-top">
+         </br>
+             <p>
+               <a>Dados Aparecerão aqui</a> 
+             </p>
+           </br>
+         </div>
+       <div class="modal-footer">
+         <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+       </div>
+     </div>
+   </div>
+ </div>
+   <!-- Modal -->
+ <script src="./js/maps.js"></script>
+ <script
+ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqKPYXiV7BlP65rt4SbKmRHrCYAkqh7j0&libraries=places&callback=initMap"
+ async defer>
+ </script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-  crossorigin="anonymous"></script>
+ integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+ crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-  integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-  crossorigin="anonymous"></script>
+ integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+ crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-  integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-  crossorigin="anonymous"></script>
-  <script>
-    $(function () {
-      $('[data-toggle="tooltip"]').tooltip()
-    })
-  </script>
-  <script>
-    $('.dropdown-menu a.dropdown-toggle').on('click', function(e) {
-      if (!$(this).next().hasClass('show')) {
-        $(this).parents('.dropdown-menu').first().find('.show').removeClass('show');
-      }
-      var $subMenu = $(this).next('.dropdown-menu');
-      $subMenu.toggleClass('show');
+ integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+ crossorigin="anonymous"></script>
+ <script>
+   $(function () {
+     $('[data-toggle="tooltip"]').tooltip()
+   })
+ </script>
+ <script>
+   $('.dropdown-menu a.dropdown-toggle').on('click', function(e) {
+     if (!$(this).next().hasClass('show')) {
+       $(this).parents('.dropdown-menu').first().find('.show').removeClass('show');
+     }
+     var $subMenu = $(this).next('.dropdown-menu');
+     $subMenu.toggleClass('show');
 
 
-      $(this).parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function(e) {
-        $('.dropdown-submenu .show').removeClass('show');
-      });
+     $(this).parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function(e) {
+       $('.dropdown-submenu .show').removeClass('show');
+     });
 
 
-      return false;
-    });
-  </script>
+     return false;
+   });
+ </script>
+  
 </body>
 
 </html>
