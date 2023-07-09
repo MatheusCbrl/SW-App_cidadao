@@ -1,10 +1,14 @@
 {
   "name": "EconoMesa",
   "short_name": "EconoMesa",
-  "description":"Este APP foi desenvolvido por EconoMesa",
+  "description": "Este APP foi desenvolvido por EconoMesa",
   "start_url": "index.html",
   "display": "standalone",
-  "display_override": ["window-control-overlay", "minimal-ui"],
+  "display_override": [
+    "window-control-overlay",
+    "fullscreen",
+    "window-controls-overlay"
+  ],
   "scope": "/",
   "background_color": "#fcaf17",
   "theme_color": "#fcaf17",
@@ -42,7 +46,7 @@
     },
     {
       "src": "/images/logoFim.jpeg",
-      "type": "image/png",
+      "type": "image/jpeg",
       "sizes": "697x1365"
     }
   ],
@@ -52,7 +56,24 @@
       "short_name": "EconoMesa",
       "description": "Ache um produto de forma fácil!",
       "url": "/",
-      "icons": [{ "src": "/images/android/android-launchericon-192-192.png", "sizes": "192x192" }]
+      "icons": [
+        {
+          "src": "/images/android/android-launchericon-96-96.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "EconoMesa?",
+      "short_name": "EconoMesa",
+      "description": "Ache um produto de forma fácil!",
+      "url": "/mercado.html",
+      "icons": [
+        {
+          "src": "/images/android/android-launchericon-96-96.png",
+          "sizes": "96x96"
+        }
+      ]
     }
   ],
   "screenshots": [
