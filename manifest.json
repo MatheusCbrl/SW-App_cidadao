@@ -7,7 +7,9 @@
   "display_override": [
     "window-control-overlay",
     "fullscreen",
-    "window-controls-overlay"
+    "window-controls-overlay",
+    "standalone",
+    "browser"
   ],
   "scope": "/",
   "background_color": "#fcaf17",
@@ -90,5 +92,13 @@
       "sizes": "598x354"
     }
   ],
-  "categories": ["productivity", "lifestyle", "utilities"]
+  "categories": [
+    "productivity",
+    "lifestyle",
+    "utilities"
+  ],
+  "lang": "pt",
+  "edge_side_panel": {
+    "preferred_width": 0
+  }
 }
