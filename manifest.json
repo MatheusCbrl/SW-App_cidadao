@@ -46,8 +46,9 @@
     },
     {
       "src": "/images/logoFim.jpeg",
-      "type": "image/jpeg",
-      "sizes": "697x1365"
+      "type": "image/png",
+      "sizes": "697x1365",
+      "purpose": "maskable"
     }
   ],
   "shortcuts": [
@@ -87,5 +88,6 @@
       "type": "image/jpeg",
       "sizes": "598x354"
     }
-  ]
+  ],
+  "categories": ["productivity", "lifestyle", "utilities"]
 }
