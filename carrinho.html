@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Carrinho de Compras</title>
+    <style>
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        button {
+            margin-left: 10px;
+        }
+
+        #cartItems {
+            margin-top: 20px;
+        }
+
+        #cartItems ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #cartItems li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Carrinho de Compras</h1>
+
+    <h2>Lista de Itens</h2>
+    <ul id="itemList">
+        <li>Item 1 <button onclick="addToCart('Item 1')">Adicionar</button></li>
+        <li>Item 2 <button onclick="addToCart('Item 2')">Adicionar</button></li>
+        <li>Item 3 <button onclick="addToCart('Item 3')">Adicionar</button></li>
+    </ul>
+
+    <h2>Carrinho de Compras</h2>
+    <ul id="cartItems">
+    </ul>
+
+    <script>
+        function addToCart(item) {
+            var cartItems = document.getElementById("cartItems");
+            var itemElement = document.createElement("li");
+            itemElement.innerHTML = item;
+            cartItems.appendChild(itemElement);
+        }
+    </script>
+</body>
+</html>
