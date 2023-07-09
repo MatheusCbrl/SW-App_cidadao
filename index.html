@@ -45,68 +45,86 @@
 
 <body>
   <div class="container-table container">
+    <div class="container">
     <h1>EconoMesa</h1>
-    <div>
-      <button id="Informacoes" type="button" class="btn btn-warning btn-md mb-3" data-toggle="modal"
-        data-target="#exampleModal">
-        Informações
-      </button>
-    </div>
     <h3>Carrinho de Compras</h2>
-      <ul id="cartItems"></ul>
-     <br/>
-
+      <ul id="cart"></ul>
+      <br/>
+     <img height="30" size="30" src="./images/remove-cart.png" onclick="removeItem()"> 
      <main role="main" class="flex-shrink-0">
       <h1 class="mt-5"></h1>
-       <div class="container">
+  
+       
         <p>Item: </p>
-        <input class="form-control" id="DiurnoInput" type="text" placeholder="Digite aqui..">
+        <input  class="form-control" type="text" id="ItemInput" placeholder="procure aqui">
         <br>
-        <ul class="list-group" id="diurnoList">
-         <li class="list-group-item">
+        <ul class="list-group" id="ItemList">
+         <li id="ItemCart" data-value= "Leite - 4,99 - Andreazza" class="list-group-item">
          Item: <strong>Leite</strong>
           - Valor: <strong>4,99</strong>
           - Mercado: <strong><a class="nav-link" href="./mercado.html">Andreazza</a></strong>
-          <button class="btn btn-primary"  onclick="addToCart('Leite 4,99')">
-            Adicionar
-          </button>
+          <img height="30" size="30" src="./images/check-out.png" onclick="addItem()">
         </li>
-         <li class="list-group-item">Item: <strong>Leite</strong> - Valor: <strong>4,99</strong> - Mercado: <strong>Andreazza</strong></li>
-         <li class="list-group-item">Item: <strong>Leite</strong> - Valor: <strong>4,99</strong> - Mercado: <strong>Andreazza</strong></li>
-         <li class="list-group-item">Item: <strong>Leite</strong> - Valor: <strong>4,99</strong> - Mercado: <strong>Andreazza</strong></li>
-         <li class="list-group-item">Item: <strong>Leite</strong> - Valor: <strong>4,99</strong> - Mercado: <strong>Andreazza</strong></li>
-         <li class="list-group-item">Item: <strong>Leite</strong> - Valor: <strong>4,99</strong> - Mercado: <strong>Zafarri</strong></li>
-         <li class="list-group-item">Item: <strong>Leite</strong> - Valor: <strong>4,99</strong> - Mercado: <strong>Zafarri</strong></li>
-         <li class="list-group-item">Item: <strong>Leite</strong> - Valor: <strong>4,99</strong> - Mercado: <strong>Andreazza</strong></li>
-         <li class="list-group-item">Item: <strong>Leite</strong> - Valor: <strong>4,99</strong> - Mercado: <strong>Andreazza</strong></li>
-         <li class="list-group-item">Item: <strong>Leite</strong> - Valor: <strong>4,99</strong> - Mercado: <strong>Andreazza</strong></li>
-         <li class="list-group-item">Item: <strong>Leite</strong> - Valor: <strong>4,99</strong> - Mercado: <strong>Andreazza</strong></li>
-         <li class="list-group-item">Item: <strong>Leite</strong> - Valor: <strong>4,99</strong> - Mercado: <strong>Andreazza</strong></li>
-         <li class="list-group-item">Item: <strong>Macarrão</strong> - Valor: <strong>4,99</strong> - Mercado: <strong>Zafarri</strong></li>
-         <li class="list-group-item">Item: <strong>Macarrão</strong> - Valor: <strong>4,99</strong> - Mercado: <strong>Zafarri</strong></li>
-         <li class="list-group-item">Item: <strong>Macarrão</strong> - Valor: <strong>4,99</strong> - Mercado: <strong>Zafarri</strong></li>
-         <li class="list-group-item">Item: <strong>Macarrão</strong> - Valor: <strong>4,99</strong> - Mercado: <strong>Andreazza</strong></li>
-         <li class="list-group-item">Item: <strong>Goiabada</strong> - Valor: <strong>4,99</strong> - Mercado: <strong>Andreazza</strong></li>
-         <li class="list-group-item">Item: <strong>Goiabada</strong> - Valor: <strong>4,99</strong> - Mercado: <strong>Andreazza</strong></li>
-         <li class="list-group-item">Item: <strong>Goiabada</strong> - Valor: <strong>4,99</strong> - Mercado: <strong>Andreazza</strong></li>
-        </ul>
+        <li id="ItemCart" data-value= "Leite - 3,99 - Zaffari" class="list-group-item">
+          Item: <strong>Leite</strong>
+           - Valor: <strong>3,99</strong>
+           - Mercado: <strong><a class="nav-link" href="./mercado.html">Zaffari</a></strong>
+           <img height="30" size="30" src="./images/check-out.png" onclick="addItem()">
+         </li>
+         <li id="ItemCart" data-value= "Macarrão - 9,99 - Zaffari" class="list-group-item">
+          Item: <strong>Macarrão</strong>
+           - Valor: <strong>9,99</strong>
+           - Mercado: <strong><a class="nav-link" href="./mercado.html">Zaffari</a></strong>
+           <img height="30" size="30" src="./images/check-out.png" onclick="addItem()">
+         </li>
+         </ul>
+        <div>
+          <br>
+          <br>
+          <button id="Informacoes" type="button" class="btn btn-warning btn-md mb-3" data-toggle="modal"
+            data-target="#exampleModal">
+            Informações
+          </button>
+        </div>
       </div>
+
      </main>
     <script>
       $(document).ready(function () {
-       $("#DiurnoInput").on("keyup", function () {
+       $("#ItemInput").on("keyup", function () {
         var value = $(this).val().toLowerCase();
-        $("#diurnoList li").filter(function () {
+        $("#ItemList li").filter(function () {
          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
         });
        });
       });
-        function addToCart(item) {
-            var cartItems = document.getElementById("cartItems");
-            var itemElement = document.createElement("li");
-            itemElement.innerHTML = item;
-            cartItems.appendChild(itemElement);
-        }
+        // Function to add an item to the cart
+          function addItem() {
+            var item = document.getElementById("ItemCart").getAttribute("data-value");
+            var cart = document.getElementById("cart");
+            
+            // Create a new list item
+            var newItem = document.createElement("li");
+
+            newItem.innerHTML = item;
+            
+            // Add the item to the cart
+            cart.appendChild(newItem);
+            
+            // Clear the input field
+           // document.getElementById("ItemCart").value = "";
+          }
+          
+          // Function to remove an item from the cart
+          function removeItem() {
+            var cart = document.getElementById("cart");
+            var items = cart.getElementsByTagName("li");
+            
+            if (items.length > 0) {
+              // Remove the last item from the cart
+              cart.removeChild(items[items.length - 1]);
+            }
+          }
      </script>
   </div>
   </div>
